@@ -1,13 +1,23 @@
 package com.codecool.codecoolshopspring.model;
 
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 import java.lang.reflect.Field;
 
+@MappedSuperclass
 public class BaseModel {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected int id;
     protected String name;
     protected String description;
+
+    public BaseModel() {
+    }
 
     public BaseModel(String name) {
         this.name = name;
