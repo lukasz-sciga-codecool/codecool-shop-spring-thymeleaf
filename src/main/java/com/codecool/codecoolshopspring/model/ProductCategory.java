@@ -1,11 +1,21 @@
 package com.codecool.codecoolshopspring.model;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
 public class ProductCategory extends BaseModel {
     private String department;
+
+    @OneToMany(mappedBy = "productCategory", cascade = CascadeType.MERGE, orphanRemoval = true)
     private List<Product> products;
+
+    public ProductCategory() {
+    }
 
     public ProductCategory(String name, String department, String description) {
         super(name);

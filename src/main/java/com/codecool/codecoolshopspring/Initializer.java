@@ -28,13 +28,13 @@ public class Initializer {
     public void init() {
         //setting up a new supplier
         Supplier amazon = new Supplier("Amazon", "Digital content and services");
-        supplierDao.add(amazon);
+        amazon = supplierDao.add(amazon);
         Supplier lenovo = new Supplier("Lenovo", "Computers");
-        supplierDao.add(lenovo);
+        lenovo = supplierDao.add(lenovo);
 
         //setting up a new product category
         ProductCategory tablet = new ProductCategory("Tablet", "Hardware", "A tablet computer, commonly shortened to tablet, is a thin, flat mobile computer with a touchscreen display.");
-        productCategoryDao.add(tablet);
+        tablet = productCategoryDao.add(tablet);
 
         //setting up products and printing it
         productDao.add(new Product("Amazon Fire", new BigDecimal("49.9"), "USD", "Fantastic price. Large content ecosystem. Good parental controls. Helpful technical support.", tablet, amazon));

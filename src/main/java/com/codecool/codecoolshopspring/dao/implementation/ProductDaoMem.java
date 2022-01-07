@@ -17,9 +17,10 @@ public class ProductDaoMem implements ProductDao {
     private List<Product> data = new ArrayList<>();
 
     @Override
-    public void add(Product product) {
+    public Product add(Product product) {
         product.setId(data.size() + 1);
         data.add(product);
+        return product;
     }
 
     @Override

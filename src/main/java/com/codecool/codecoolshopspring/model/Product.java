@@ -1,15 +1,24 @@
 package com.codecool.codecoolshopspring.model;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Currency;
 
+@Entity
 public class Product extends BaseModel {
 
     private BigDecimal defaultPrice;
     private Currency defaultCurrency;
+
+    @ManyToOne(cascade = CascadeType.MERGE)
     private ProductCategory productCategory;
+
+    @ManyToOne(cascade = CascadeType.MERGE)
     private Supplier supplier;
 
+
+    public Product() {
+    }
 
     public Product(String name, BigDecimal defaultPrice, String currencyString, String description, ProductCategory productCategory, Supplier supplier) {
         super(name, description);
