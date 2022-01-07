@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface ProductDao {
 
-    Product add(Product product);
+    void add(Product product);
     Product find(int id);
     void remove(int id);
 

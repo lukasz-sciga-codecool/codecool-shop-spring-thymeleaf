@@ -26,8 +26,8 @@ public class ProductDaoDb implements ProductDao {
     }
 
     @Override
-    public Product add(Product product) {
-        return repository.save(product);
+    public void add(Product product) {
+        repository.save(product);
     }
 
     @Override

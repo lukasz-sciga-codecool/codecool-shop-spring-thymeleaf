@@ -22,8 +22,8 @@ public class ProductCategoryDaoDb implements ProductCategoryDao {
     }
 
     @Override
-    public ProductCategory add(ProductCategory category) {
-        return repository.save(category);
+    public void add(ProductCategory category) {
+        repository.save(category);
     }
 
     @Override

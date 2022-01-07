@@ -13,10 +13,9 @@ public class SupplierDaoMem implements SupplierDao {
     private List<Supplier> data = new ArrayList<>();
 
     @Override
-    public Supplier add(Supplier supplier) {
+    public void add(Supplier supplier) {
         supplier.setId(data.size() + 1);
         data.add(supplier);
-        return supplier;
     }
 
     @Override

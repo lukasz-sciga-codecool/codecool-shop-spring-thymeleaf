@@ -22,8 +22,8 @@ public class SupplierDaoDb implements SupplierDao {
 
 
     @Override
-    public Supplier add(Supplier supplier) {
-        return repository.save(supplier);
+    public void add(Supplier supplier) {
+        repository.save(supplier);
     }
 
     @Override
